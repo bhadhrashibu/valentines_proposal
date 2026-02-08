@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Valentine 💌</title>
+
+  <style>
+    body {
+      background: linear-gradient(#ffd6e8, #fff);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #ff4d88;
+      font-size: 40px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+
+      #letter {
+        padding: 20px;
+      }
+    }
+  </style>
+
+
+    p {
+      font-size: 20px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 15px;
+    }
+
+   #yesBtn {
+      background-color: #ff4d88;
+      color: white;
+      position: relative;
+      z-index: 10;
+    }
+
+    #noBtn {
+      background-color: #ccc;
+      position: absolute;
+      top: 70%;
+      left: 55%;
+    }
+
+    #letter {
+      display: none;
+      margin-top: 40px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .music-btn {
+      background-color: #ff85b3;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Hey GUNDU 💕</h1>
+
+  <p>
+    Somewhere between conversations that never felt long enough,<br>
+    laughter that stayed with me all day,<br>
+    and silences that felt safe…<br><br>
+
+    you became my comfort, my chaos,<br>
+    and my favorite feeling 🥺💖
+  </p>
+
+  <h2>GUNDU, will you be my Valentine? 🌹</h2>
+
+  <button id="yesBtn" onclick="showLetter()">YES 💘</button>
+  <button id="noBtn" onclick="moveButton()">NO 🙈</button>
+
+  <br><br>
+  <button class="music-btn" onclick="playMusic()">🎵 Play Our Song</button>
+
+  <audio id="song" src="music.mp3" controls></audio>
+
+  <div id="letter">
+    <h2>My Love Letter For You, GUNDU 💌</h2>
+    <p>
+      My dear GUNDU,<br><br>
+
+      Loving you feels like coming home —<br>
+      not to a place,<br>
+      but to a feeling I never want to lose 🌙<br><br>
+
+      I choose you in the quiet moments,<br>
+      in the loud laughter,<br>
+      in the chaos of life and the calm that follows 💕<br><br>
+
+      Thank you for being my safe space,<br>
+      my biggest comfort,<br>
+      and the reason my heart feels so full 🫶<br><br>
+
+      Today, tomorrow, and every day after —<br>
+      it’s you. Always you 💖<br><br>
+
+      Happy Propose Day, my GUNDU 🌸
+    </p>
+  </div>
+
+  <script>
+    function showLetter() {
+      const letter = document.getElementById("letter");
+      letter.style.display = "block";
+      document.getElementById("song").play();
+
+      // smooth scroll to the letter 💌
+      letter.scrollIntoView({ behavior: "smooth" });
+    }
+
+
+    function playMusic() {
+      const song = document.getElementById("song");
+      song.currentTime = 0;
+      song.play().catch(error => {
+        alert("Music file not found or browser blocked it.");
+      });
+    }
+
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 120);
+      document.getElementById("noBtn").style.left = x + "px";
+      document.getElementById("noBtn").style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
